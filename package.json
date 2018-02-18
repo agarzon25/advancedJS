@@ -1,0 +1,28 @@
+{
+  "name": "advancedjs",
+  "version": "1.0.0",
+  "description": "This is for educational purposes",
+  "main": "hangman.js",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "prompt": "^1.0.0",
+    "random-words": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agarzon25/advancedJS.git"
+  },
+  "keywords": [
+    "advancedJS"
+  ],
+  "author": "agarzon25",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agarzon25/advancedJS/issues"
+  },
+  "homepage": "https://github.com/agarzon25/advancedJS#readme"
+}
