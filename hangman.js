@@ -1,33 +1,32 @@
 // GLobal variables
 
-var wins = 0;
-var losses = 0;
-var progress = [];
-var wrongGuess = [];
 var randomWords = require('random-words');
 var wordGen = require('./word');
 var inquirer = require('inquirer');
 
-// Function to start a new game creates 
-
 function startGame() {
+	console.log("~~~~~~~~ Welcome to Node Hangman ~~~~~~~~")
+	console.log("-----------------------------------------")
+	console.log("-------------- Start !!!  ---------------")
+	console.log("-----------------------------------------")
 	var randomWord = randomWords();
 	var newWord = new wordGen(randomWord)
 	var newBlank = newWord.blankLine()
 	var newsplitWord = newWord.word.split('')
-	console.log(newsplitWord)
-
+	//console.log(newsplitWord)
+	var nextRound = new round(newsplitWord, newBlank)
+	nextRound.startRound()
 }
 
 function round(word, blanks) {
 	this.word = word;
-	this.blanks = blanks
+	this.blanks = blanks;
 };
 
 round.prototype.startRound = function() {
 	if (this.isEqual()) {
 		console.log("YOU WIN!!!")
-		//startGame()
+		startGame()
 		return
 	}
 	inquirer.prompt([
@@ -61,13 +60,13 @@ round.prototype.checkGuess = function(guess) {
 };
 
 round.prototype.isEqual = function() {
-	console.log(this.blanks)
+	console.log("##########################################")
+	console.log("                 " + this.blanks.toString())
+	console.log("##########################################")
 	if (this.blanks.toString() === this.word.toString()) {
 		return true
 	}
 };
 
 // Main
-//startGame()
-var nextRound = new round(newsplitWord, newBlank)
-nextRound.startRound()
+startGame()
